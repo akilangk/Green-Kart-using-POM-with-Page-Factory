@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class CartPageObjects {
-    @FindBy(css = "tbody > tr > td:nth-child(2)")
+    @FindBy(css = ".products tbody > tr > td:nth-child(2)")
     public static List<WebElement> productNames;
-    @FindBy(css = ".totAmt")
+    @FindBy(css = ".products > div > button")
     public static WebElement placeOrder;
 }

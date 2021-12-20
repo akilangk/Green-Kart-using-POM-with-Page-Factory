@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Green Kart">
+    <test verbose="2" name="Green Kart Order Placement">
+        <classes>
+            <class name="greenCartTestCases.TestGreenCart">
+                <methods>
+                    <include name="checkSearchingAndAddingVeggiesToCart"/>
+                    <include name="checkTheAddedVeggiesCountInTheCart"/>
+                    <include name="checkOrderPlacing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

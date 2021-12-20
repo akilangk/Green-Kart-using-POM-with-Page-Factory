@@ -26,6 +26,7 @@ public class CommonFunctions {
     String pathSeparator = System.getProperty("file.separator");
     public List<String> veggies = new ArrayList<>();
     public List<String> quantity = new ArrayList<>();
+    public List<String> country = new ArrayList<>();
 
     public void readExcelData() {
         List<String> headerNames;
@@ -56,6 +57,11 @@ public class CommonFunctions {
                     for (int rowIndex = 1; rowIndex < numberOfRows; rowIndex++) {
                         Row rowData = sheet.getRow(rowIndex);
                         quantity.add(format.formatCellValue(rowData.getCell(columnIndex)));
+                    }
+                } else if (header.equals(getColumnThreeHeader())) {
+                    for (int rowIndex = 1; rowIndex < numberOfRows; rowIndex++) {
+                        Row rowData = sheet.getRow(rowIndex);
+                        country.add(format.formatCellValue(rowData.getCell(columnIndex)));
                     }
                 }
             }
@@ -105,6 +111,10 @@ public class CommonFunctions {
         return getPropertiesObject().getProperty("columnTwoHeader");
     }
 
+    public String getColumnThreeHeader() {
+        return getPropertiesObject().getProperty("columnThreeHeader");
+    }
+
     public int numberOfVeggies() {
         return veggies.size();
     }
@@ -127,6 +137,6 @@ public class CommonFunctions {
 
     @AfterSuite
     public void closeBrowser() {
-        //driver.quit();
+        driver.quit();
     }
 }
